@@ -10,8 +10,8 @@
 <section class="services-grid">
   <div class="container">
     <div class="row">
-      <div class="col-12" *ngFor="let service of services">
-        <div class="service-card slide-in-up">
+      <div class="col-12" *ngFor="let service of services; let i = index">
+        <div class="service-card" [style.--card-index]="i+1">
           <div class="service-header">
             <div class="service-icon">
               <i class="fas {{service.icon}}"></i>
@@ -36,7 +36,7 @@
       <p>My consulting process is designed to be straightforward and focused on your needs. Here's what you can expect when working with me:</p>
       
       <div class="process-steps">
-        <div class="process-step slide-in-left">
+        <div class="process-step" [style.--step-index]="1">
           <div class="step-number">1</div>
           <div class="step-content">
             <h3>Initial Consultation</h3>
@@ -44,7 +44,7 @@
           </div>
         </div>
         
-        <div class="process-step slide-in-right">
+        <div class="process-step" [style.--step-index]="2">
           <div class="step-number">2</div>
           <div class="step-content">
             <h3>Assessment & Planning</h3>
@@ -52,7 +52,7 @@
           </div>
         </div>
         
-        <div class="process-step slide-in-left">
+        <div class="process-step" [style.--step-index]="3">
           <div class="step-number">3</div>
           <div class="step-content">
             <h3>Implementation Support</h3>
@@ -60,7 +60,7 @@
           </div>
         </div>
         
-        <div class="process-step slide-in-right">
+        <div class="process-step" [style.--step-index]="4">
           <div class="step-number">4</div>
           <div class="step-content">
             <h3>Review & Adjustment</h3>

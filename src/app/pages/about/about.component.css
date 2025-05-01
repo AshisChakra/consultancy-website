@@ -1,7 +1,7 @@
 .about-hero {
-  background-color: var(--bg-lighter-blue);
-  background-image: linear-gradient(135deg, var(--bg-lighter-blue) 0%, var(--bg-dark-cyan) 100%);
-  color: white;
+  background-color: var(--bg-accent);
+  background-image: linear-gradient(135deg, var(--bg-subtle) 0%, var(--secondary-light) 100%);
+  color: var(--text-color);
   padding: var(--spacing-xxl) 0;
   text-align: center;
   position: relative;
@@ -15,8 +15,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: radial-gradient(circle at 20% 30%, rgba(0, 200, 255, 0.05) 0%, transparent 40%),
-                    radial-gradient(circle at 70% 60%, rgba(0, 245, 155, 0.05) 0%, transparent 50%);
+  background-image: radial-gradient(circle at 20% 30%, rgba(0, 128, 128, 0.05) 0%, transparent 40%),
+                    radial-gradient(circle at 70% 60%, rgba(218, 165, 32, 0.05) 0%, transparent 50%);
   z-index: 0;
   pointer-events: none;
 }
@@ -24,11 +24,11 @@
 .about-hero h1 {
   font-size: 2.5rem;
   margin-bottom: var(--spacing-md);
-  color: var(--text-primary);
-  text-shadow: 0 0 15px rgba(0, 245, 155, 0.5);
+  color: var(--primary-dark);
+  text-shadow: 0 0 15px rgba(0, 128, 128, 0.3);
   position: relative;
   z-index: 1;
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
   letter-spacing: 1px;
 }
 
@@ -38,7 +38,7 @@
   font-size: 1.25rem;
   position: relative;
   z-index: 1;
-  color: var(--text-secondary);
+  color: var(--text-color);
 }
 
 .profile-section {
@@ -72,7 +72,7 @@
 
 .profile-image:hover .profile-image-wrapper {
   transform: rotate(-1deg);
-  box-shadow: var(--shadow-lg), 0 0 15px rgba(0, 200, 255, 0.2);
+  box-shadow: var(--shadow-lg), 0 0 15px rgba(0, 128, 128, 0.2);
 }
 
 .profile-image img {
@@ -93,7 +93,7 @@
   top: 30px;
   left: 30px;
   border-radius: var(--border-radius-lg);
-  background: var(--accent-purple-light);
+  background: var(--secondary-color);
   z-index: -1;
 }
 
@@ -103,7 +103,7 @@
 
 .profile-content h2 {
   margin-bottom: var(--spacing-md);
-  color: var(--primary-blue);
+  color: var(--primary-color);
   font-size: 2.5rem;
   font-weight: 700;
   position: relative;
@@ -117,7 +117,7 @@
   left: 0;
   width: 60px;
   height: 3px;
-  background: var(--accent-purple);
+  background: var(--accent-color);
   border-radius: var(--border-radius-sm);
 }
 
@@ -125,7 +125,7 @@
   margin-bottom: var(--spacing-md);
   line-height: 1.8;
   font-size: 1.1rem;
-  color: var(--text-secondary);
+  color: var(--text-color);
 }
 
 .profile-stats {
@@ -147,8 +147,8 @@
 
 .stat:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15), 0 0 10px rgba(0, 200, 255, 0.1);
-  border-bottom-color: var(--primary-blue);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15), 0 0 10px rgba(0, 128, 128, 0.1);
+  border-bottom-color: var(--primary-color);
   animation: subtle-bounce 1.5s infinite;
 }
 
@@ -164,16 +164,12 @@
 .stat-number {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--primary-blue);
+  color: var(--primary-color);
   margin-bottom: var(--spacing-xs);
-  background: var(--gradient-blue);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
 }
 
 .stat-label {
-  color: var(--text-secondary);
+  color: var(--text-light);
   font-weight: 500;
 }
 
@@ -181,10 +177,12 @@
   padding: 1rem 2rem;
   font-size: 1.1rem;
   border-radius: 50px;
+  background: linear-gradient(to right, var(--primary-color), var(--primary-dark));
+  color: white;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-top: var(--spacing-md);
-  box-shadow: 0 10px 20px rgba(26, 115, 232, 0.3);
+  box-shadow: 0 10px 20px rgba(0, 128, 128, 0.3);
   font-weight: 600;
 }
 
@@ -203,7 +201,7 @@
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  background: var(--accent-purple-light);
+  background: var(--secondary-color);
   opacity: 0.5;
   z-index: 0;
 }
@@ -223,12 +221,12 @@
 }
 
 .blockquote {
-  border-left: 4px solid var(--primary-blue);
+  border-left: 4px solid var(--primary-color);
   padding: var(--spacing-lg) var(--spacing-lg) var(--spacing-lg) var(--spacing-xl);
   margin: var(--spacing-xl) 0;
   font-style: italic;
-  color: var(--primary-blue);
-  background: var(--light-blue);
+  color: var(--primary-color);
+  background: var(--bg-accent);
   border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
   font-size: 1.2rem;
   line-height: 1.8;
@@ -242,14 +240,14 @@
   left: 20px;
   top: 0;
   font-size: 5rem;
-  color: var(--primary-blue);
+  color: var(--primary-color);
   opacity: 0.2;
   line-height: 1;
 }
 
 .skills-section {
   padding: var(--spacing-xxl) 0;
-  background: linear-gradient(to right, var(--light-blue), white, var(--light-blue));
+  background: linear-gradient(to right, var(--bg-accent), var(--bg-main), var(--bg-accent));
   position: relative;
 }
 
@@ -270,16 +268,16 @@
 
 .skill-name {
   font-weight: 600;
-  color: var(--primary-blue);
+  color: var(--primary-color);
 }
 
 .skill-percentage {
-  color: var(--text-secondary);
+  color: var(--text-light);
 }
 
 .skill-bar {
   height: 10px;
-  background-color: var(--background-off-white);
+  background-color: var(--bg-subtle);
   border-radius: var(--border-radius-sm);
   overflow: hidden;
   box-shadow: var(--shadow-inner);
@@ -287,7 +285,7 @@
 
 .skill-progress {
   height: 100%;
-  background: var(--gradient-blue);
+  background: linear-gradient(to right, var(--primary-color), var(--primary-dark));
   border-radius: var(--border-radius-sm);
   transition: width 1.5s ease;
   position: relative;
@@ -319,7 +317,7 @@
 }
 
 .qualifications h3 {
-  color: var(--primary-blue);
+  color: var(--primary-color);
   margin-bottom: var(--spacing-lg);
   font-weight: 600;
   text-align: center;
@@ -334,7 +332,7 @@
   left: 0;
   width: 40px;
   height: 3px;
-  background: var(--accent-purple);
+  background: var(--accent-color);
   border-radius: var(--border-radius-sm);
 }
 
@@ -357,8 +355,8 @@
 
 .qualification-item:hover {
   transform: translateX(2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 0 8px rgba(0, 200, 255, 0.1);
-  border-left-color: var(--primary-blue);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 0 8px rgba(0, 128, 128, 0.1);
+  border-left-color: var(--primary-color);
   animation: subtle-slide 0.4s ease;
 }
 
@@ -373,7 +371,7 @@
 
 .qualification-icon {
   color: white;
-  background: var(--gradient-blue);
+  background: linear-gradient(to right, var(--primary-color), var(--primary-dark));
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -385,14 +383,14 @@
 }
 
 .qualification-text {
-  color: var(--text-primary);
+  color: var(--text-color);
   font-weight: 500;
 }
 
 .cta-section {
   padding: var(--spacing-xxl) 0;
   text-align: center;
-  background: var(--gradient-purple);
+  background: linear-gradient(to right, var(--primary-color), var(--primary-dark));
   color: white;
   position: relative;
   overflow: hidden;
@@ -432,7 +430,7 @@
 
 .cta-button {
   background: white;
-  color: var(--accent-purple);
+  color: var(--primary-color);
   border: 2px solid white;
   padding: 1rem 2rem;
   font-size: 1.1rem;
