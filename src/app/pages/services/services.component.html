@@ -1,0 +1,84 @@
+<!-- Services Hero Section -->
+<section class="services-hero">
+  <div class="container">
+    <h1>My Services</h1>
+    <p>Professional consulting solutions for your financial and emotional well-being</p>
+  </div>
+</section>
+
+<!-- Services Grid Section -->
+<section class="services-grid">
+  <div class="container">
+    <div class="row">
+      <div class="col-12" *ngFor="let service of services">
+        <div class="service-card slide-in-up">
+          <div class="service-header">
+            <div class="service-icon">
+              <i class="fas {{service.icon}}"></i>
+            </div>
+            <h2 class="service-title">{{service.title}}</h2>
+          </div>
+          <p class="service-description">{{service.description}}</p>
+          <ul class="service-details">
+            <li *ngFor="let detail of service.details">{{detail}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Consultation Process Section -->
+<section class="process-section">
+  <div class="container">
+    <h2 class="section-title">How It Works</h2>
+    <div class="process-container">
+      <p>My consulting process is designed to be straightforward and focused on your needs. Here's what you can expect when working with me:</p>
+      
+      <div class="process-steps">
+        <div class="process-step slide-in-left">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Initial Consultation</h3>
+            <p>We'll start with a complimentary 30-minute consultation to discuss your needs and determine if we're a good fit for working together. This can be done in person (in West Bengal) or via video call.</p>
+          </div>
+        </div>
+        
+        <div class="process-step slide-in-right">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Assessment & Planning</h3>
+            <p>If we decide to move forward, I'll conduct a comprehensive assessment of your current situation, whether financial, emotional, or both. Based on this, we'll develop a personalized action plan.</p>
+          </div>
+        </div>
+        
+        <div class="process-step slide-in-left">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Implementation Support</h3>
+            <p>I'll provide guidance and support as you implement the strategies we've developed. This includes practical tools, resources, and regular check-ins to help you stay on track.</p>
+          </div>
+        </div>
+        
+        <div class="process-step slide-in-right">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Review & Adjustment</h3>
+            <p>We'll regularly review your progress and make adjustments to the plan as needed. I believe in flexibility and adapting strategies as your circumstances change.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Consultation CTA Section -->
+<section class="consultation-section">
+  <div class="container">
+    <div class="consultation-container">
+      <h2>Ready to Get Started?</h2>
+      <p>Take the first step toward a more balanced life by scheduling your complimentary initial consultation. We'll discuss your needs and determine how I can best support you on your journey.</p>
+      <a routerLink="/contact" class="btn btn-primary">Schedule Your Consultation</a>
+    </div>
+  </div>
+</section> 

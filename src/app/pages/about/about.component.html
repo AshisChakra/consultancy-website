@@ -1,0 +1,120 @@
+<!-- About Hero Section -->
+<section class="about-hero">
+  <div class="container">
+    <h1>About Ashis Chakraborty</h1>
+    <p>Passionate about empowering individuals to achieve financial stability and emotional well-being</p>
+  </div>
+</section>
+
+<!-- Profile Section -->
+<section class="profile-section">
+  <div class="container">
+    <div class="profile-container">
+      <div class="profile-image animate-on-scroll animate-slide-left">
+        <div class="profile-image-wrapper">
+          <img [src]="profileImage" alt="Ashis Chakraborty - Personal Finance and Self-Help Consultant">
+        </div>
+        <div class="profile-pattern"></div>
+      </div>
+      <div class="profile-content animate-on-scroll animate-slide-right">
+        <h2>I'm Ashis Chakraborty</h2>
+        <p>Based in Rajpur Sonarpur, West Bengal, I'm a dedicated consultant specializing in personal finance and self-help strategies, with a particular focus on helping individuals dealing with depression and stress.</p>
+        <p>With a background in finance and a personal journey through mental health challenges, I bring both professional expertise and empathetic understanding to my consulting practice.</p>
+        
+        <div class="profile-stats">
+          <div class="stat animate-on-scroll animate-zoom-in" *ngFor="let stat of stats">
+            <div class="stat-number">{{stat.value}}</div>
+            <div class="stat-label">{{stat.label}}</div>
+          </div>
+        </div>
+        
+        <a routerLink="/contact" class="btn btn-primary profile-cta">Schedule a Consultation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- My Story Section -->
+<section class="story-section">
+  <div class="container">
+    <h2 class="section-title animate-on-scroll animate-slide-up">My Story</h2>
+    <div class="story-content">
+      <p class="animate-on-scroll animate-slide-up">My journey into personal finance and self-help consulting began with my own struggles. After experiencing financial difficulties while battling depression, I realized the profound connection between financial stability and mental health.</p>
+      
+      <div class="blockquote animate-on-scroll animate-slide-up">
+        "Financial stress and mental health challenges often feed into each other, creating a cycle that can feel impossible to break. My mission is to help people address both sides of this equation."
+      </div>
+      
+      <p class="animate-on-scroll animate-slide-up">I pursued education in finance and psychology, developing a unique approach that addresses both the practical aspects of financial management and the emotional barriers that often prevent progress.</p>
+      
+      <p class="animate-on-scroll animate-slide-up">Having successfully helped numerous clients in West Bengal navigate their financial challenges while improving their mental well-being, I established my consulting practice to reach more individuals in need of comprehensive support.</p>
+      
+      <p class="animate-on-scroll animate-slide-up">Today, I work with clients from various backgrounds, providing personalized strategies that respect their unique circumstances and goals. I'm particularly passionate about making financial guidance accessible and creating stigma-free spaces to discuss mental health challenges.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section class="skills-section">
+  <div class="container">
+    <h2 class="section-title animate-on-scroll animate-slide-up">My Expertise</h2>
+    <div class="skills-container">
+      <div class="skill-item animate-on-scroll animate-slide-right" *ngFor="let skill of skills">
+        <div class="skill-header">
+          <span class="skill-name">{{ skill.category }}</span>
+          <span class="skill-percentage">{{ skill.level }}%</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" [style.width.%]="skill.level"></div>
+        </div>
+      </div>
+      
+      <div class="qualifications animate-on-scroll animate-slide-up mt-5">
+        <h3>Qualifications</h3>
+        <div class="qualifications-grid">
+          <div class="qualification-item">
+            <div class="qualification-icon">
+              <i class="fas fa-certificate"></i>
+            </div>
+            <div class="qualification-text">Certified Financial Planner (CFP)</div>
+          </div>
+          <div class="qualification-item">
+            <div class="qualification-icon">
+              <i class="fas fa-university"></i>
+            </div>
+            <div class="qualification-text">Master's Degree in Finance</div>
+          </div>
+          <div class="qualification-item">
+            <div class="qualification-icon">
+              <i class="fas fa-brain"></i>
+            </div>
+            <div class="qualification-text">Diploma in Counseling Psychology</div>
+          </div>
+          <div class="qualification-item">
+            <div class="qualification-icon">
+              <i class="fas fa-heartbeat"></i>
+            </div>
+            <div class="qualification-text">Mental Health First Aid Certification</div>
+          </div>
+          <div class="qualification-item">
+            <div class="qualification-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="qualification-text">Investment Advisory Certification</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-container animate-on-scroll animate-zoom-in">
+      <h2>Let's Work Together</h2>
+      <p>I believe in creating personalized solutions that address your unique needs and circumstances. Whether you're struggling with financial planning, dealing with depression, or managing stress, I'm here to help you navigate your journey.</p>
+      <a routerLink="/contact" class="btn btn-primary cta-button mt-3">Get in Touch</a>
+    </div>
+  </div>
+</section> 

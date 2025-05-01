@@ -1,0 +1,54 @@
+<!-- Blog Hero Section -->
+<section class="blog-hero">
+  <div class="container">
+    <h1>Blog</h1>
+    <p>Insights and articles on personal finance and mental well-being</p>
+  </div>
+</section>
+
+<!-- Blog Content Section -->
+<section class="blog-container">
+  <div class="container">
+    <!-- Blog Categories -->
+    <div class="blog-sidebar">
+      <h2>Categories</h2>
+      <div class="blog-categories">
+        <button 
+          *ngFor="let category of categories" 
+          class="category-btn" 
+          [ngClass]="{'active': selectedCategory === category}"
+          (click)="changeCategory(category)">
+          {{ category }}
+        </button>
+      </div>
+    </div>
+    
+    <!-- Blog Posts Grid -->
+    <div class="blog-grid">
+      <article class="blog-card slide-in-up" *ngFor="let post of filteredPosts">
+        <div class="blog-image">
+          <img [src]="post.image" [alt]="post.title">
+        </div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span class="blog-date">{{ post.date }}</span>
+            <span class="blog-category">{{ post.category }}</span>
+          </div>
+          <h2 class="blog-title">{{ post.title }}</h2>
+          <p class="blog-excerpt">{{ post.excerpt }}</p>
+          <a routerLink="/blog" class="btn btn-outline blog-read-more">Read More</a>
+        </div>
+      </article>
+    </div>
+    
+    <!-- Pagination - Optional for future use -->
+    <div class="pagination">
+      <a href="#" class="pagination-btn active">1</a>
+      <a href="#" class="pagination-btn">2</a>
+      <a href="#" class="pagination-btn">3</a>
+      <a href="#" class="pagination-btn">
+        <i class="fas fa-chevron-right"></i>
+      </a>
+    </div>
+  </div>
+</section> 

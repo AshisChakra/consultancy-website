@@ -1,0 +1,209 @@
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container hero-content">
+    <h1 class="hero-title">Empowering Your Financial and Emotional Well-Being</h1>
+    <p class="hero-subtitle">Expert guidance on personal finance and self-help strategies for managing depression and stress</p>
+    <a routerLink="/contact" class="btn hero-cta">Schedule a Consultation</a>
+  </div>
+  <div class="scroll-down" (click)="scrollToElement('features')">
+    <i class="fas fa-chevron-down"></i>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="features-section">
+  <div class="container">
+    <h2 class="section-title animate-on-scroll animate-slide-up">Why Choose My Services</h2>
+    <div class="features-grid">
+      <div class="feature-card animate-on-scroll animate-slide-up" *ngFor="let feature of features">
+        <div class="feature-icon">
+          <i class="fas {{feature.icon}}"></i>
+        </div>
+        <h3 class="feature-title">{{feature.title}}</h3>
+        <p class="feature-description">{{feature.description}}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="about-section">
+  <div class="container">
+    <h2 class="section-title animate-on-scroll animate-slide-up">Welcome to Ashis Chakraborty Consulting</h2>
+    <div class="about-content">
+      <div class="about-text animate-on-scroll animate-slide-left">
+        <p>I'm Ashis (Abhi), a dedicated consultant specializing in personal finance and self-help strategies. I'm particularly focused on helping individuals struggling with depression and stress to reclaim control of their lives.</p>
+        <p>With my expertise in financial planning and emotional well-being, I provide personalized guidance that addresses both your financial goals and mental health needs.</p>
+        <p>Based in Rajpur Sonarpur, West Bengal, I work with clients to develop practical solutions that lead to lasting change and a more balanced life.</p>
+        <a routerLink="/about" class="btn btn-primary mt-3">Learn More About Me</a>
+      </div>
+      <div class="about-image animate-on-scroll animate-slide-right">
+        <div class="image-frame">
+          <img [src]="profileImage" alt="Ashis Chakraborty - Personal Finance and Self-Help Consultant">
+        </div>
+        <div class="image-decoration"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section animate-on-scroll">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-card animate-on-scroll animate-zoom-in" *ngFor="let stat of stats">
+        <div class="stat-icon">
+          <i class="fas {{stat.icon}}"></i>
+        </div>
+        <div class="stat-value">{{stat.value}}{{stat.suffix}}</div>
+        <div class="stat-label">{{stat.label}}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="services-section">
+  <div class="container">
+    <h2 class="section-title animate-on-scroll animate-slide-up">My Services</h2>
+    <div class="services-grid">
+      <div class="service-card animate-on-scroll animate-slide-up">
+        <div class="service-icon">
+          <i class="fas fa-coins"></i>
+        </div>
+        <h3 class="service-title">Financial Planning</h3>
+        <p class="service-description">Comprehensive financial planning tailored to your unique situation and goals, helping you build a secure financial future.</p>
+      </div>
+      
+      <div class="service-card animate-on-scroll animate-slide-up">
+        <div class="service-icon">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <h3 class="service-title">Investment Advice</h3>
+        <p class="service-description">Clear, straightforward investment guidance designed for beginners and those looking to optimize their existing portfolios.</p>
+      </div>
+      
+      <div class="service-card animate-on-scroll animate-slide-up">
+        <div class="service-icon">
+          <i class="fas fa-heart"></i>
+        </div>
+        <h3 class="service-title">Depression Support</h3>
+        <p class="service-description">Practical strategies and supportive guidance to help you navigate through depression and build resilience.</p>
+      </div>
+      
+      <div class="service-card animate-on-scroll animate-slide-up">
+        <div class="service-icon">
+          <i class="fas fa-spa"></i>
+        </div>
+        <h3 class="service-title">Stress Management</h3>
+        <p class="service-description">Effective techniques to reduce stress, improve your daily functioning, and enhance your overall quality of life.</p>
+      </div>
+      
+      <div class="service-card animate-on-scroll animate-slide-up">
+        <div class="service-icon">
+          <i class="fas fa-clipboard-check"></i>
+        </div>
+        <h3 class="service-title">Budgeting & Debt Management</h3>
+        <p class="service-description">Personalized budgeting systems and debt reduction strategies that actually work with your lifestyle.</p>
+      </div>
+      
+      <div class="service-card animate-on-scroll animate-slide-up">
+        <div class="service-icon">
+          <i class="fas fa-users"></i>
+        </div>
+        <h3 class="service-title">Group Workshops</h3>
+        <p class="service-description">Interactive workshops on financial literacy and mental health topics for small groups and organizations.</p>
+      </div>
+    </div>
+    <div class="text-center mt-4 animate-on-scroll animate-slide-up">
+      <a routerLink="/services" class="btn btn-primary">View All Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials-section">
+  <div class="container">
+    <h2 class="section-title animate-on-scroll animate-slide-up">What My Clients Say</h2>
+    <div class="testimonial-container">
+      <div class="testimonial-slider">
+        <div *ngFor="let testimonial of testimonials; let i = index" 
+             class="testimonial" 
+             [ngClass]="{'active': i === currentTestimonialIndex}">
+          <div class="testimonial-image" *ngIf="testimonial.image">
+            <img [src]="testimonial.image" [alt]="testimonial.author">
+          </div>
+          <p class="testimonial-text">"{{ testimonial.text }}"</p>
+          <p class="testimonial-author">{{ testimonial.author }}</p>
+          <p class="testimonial-role">{{ testimonial.role }}</p>
+        </div>
+      </div>
+      <div class="testimonial-nav">
+        <button (click)="prevTestimonial()" aria-label="Previous testimonial">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button (click)="nextTestimonial()" aria-label="Next testimonial">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Blog Preview Section -->
+<section class="blog-preview-section">
+  <div class="container">
+    <h2 class="section-title animate-on-scroll animate-slide-up">Latest from the Blog</h2>
+    <div class="blog-preview-grid">
+      <article class="blog-card animate-on-scroll animate-slide-up">
+        <div class="blog-image">
+          <img src="/assets/images/blog-finance.jpg" alt="Financial Planning Tips">
+        </div>
+        <div class="blog-content">
+          <div class="blog-date">April 25, 2025</div>
+          <h3 class="blog-title">5 Simple Steps to Start Your Financial Journey</h3>
+          <p class="blog-excerpt">Discover the essential steps to take control of your finances, even if you're just getting started with budgeting and saving.</p>
+          <a routerLink="/blog" class="btn btn-outline">Read More</a>
+        </div>
+      </article>
+      
+      <article class="blog-card animate-on-scroll animate-slide-up">
+        <div class="blog-image">
+          <img src="/assets/images/blog-stress.jpg" alt="Stress Management Techniques">
+        </div>
+        <div class="blog-content">
+          <div class="blog-date">April 18, 2025</div>
+          <h3 class="blog-title">Managing Stress in Your Daily Life</h3>
+          <p class="blog-excerpt">Learn practical techniques to reduce stress and anxiety that you can incorporate into your everyday routine.</p>
+          <a routerLink="/blog" class="btn btn-outline">Read More</a>
+        </div>
+      </article>
+      
+      <article class="blog-card animate-on-scroll animate-slide-up">
+        <div class="blog-image">
+          <img src="/assets/images/blog-depression.jpg" alt="Coping with Depression">
+        </div>
+        <div class="blog-content">
+          <div class="blog-date">April 10, 2025</div>
+          <h3 class="blog-title">Finding Hope When Dealing with Depression</h3>
+          <p class="blog-excerpt">Strategies and insights for navigating through depression and building a foundation for emotional wellness.</p>
+          <a routerLink="/blog" class="btn btn-outline">Read More</a>
+        </div>
+      </article>
+    </div>
+    <div class="view-all-posts animate-on-scroll animate-slide-up">
+      <a routerLink="/blog" class="btn btn-primary">View All Posts</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content animate-on-scroll animate-zoom-in">
+      <h2 class="cta-title">Ready to Transform Your Financial and Emotional Well-being?</h2>
+      <p class="cta-description">Take the first step toward a more balanced and fulfilling life. Schedule a consultation to discuss how I can help you address your specific needs.</p>
+      <a routerLink="/contact" class="btn cta-button">Book a Consultation Today</a>
+    </div>
+  </div>
+</section> 

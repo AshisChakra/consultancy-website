@@ -1,0 +1,158 @@
+<!-- Contact Hero Section -->
+<section class="contact-hero">
+  <div class="container">
+    <h1>Get in Touch</h1>
+    <p>Let's discuss how I can help you achieve financial stability and emotional well-being</p>
+  </div>
+</section>
+
+<!-- Contact Content Section -->
+<section class="contact-container">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info slide-in-left">
+        <h2>Contact Information</h2>
+        <p>Feel free to reach out with any questions. I offer a complimentary 30-minute initial consultation to discuss your needs and determine if we're a good fit for working together.</p>
+        
+        <div class="contact-details">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-text">
+              <p>Rajpur Sonarpur, West Bengal, India</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-text">
+              <p>info&#64;ashischakraborty.com</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="contact-text">
+              <p>+91 9876543210</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="contact-text">
+              <p>Available Monday - Friday, 9:00 AM - 6:00 PM IST</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="social-links">
+          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        </div>
+      </div>
+      
+      <div class="contact-form slide-in-right">
+        <div *ngIf="success" class="alert alert-success">
+          Thank you for your message! I'll get back to you as soon as possible.
+        </div>
+        
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="name" class="form-label">Your Name</label>
+            <input 
+              type="text" 
+              id="name" 
+              formControlName="name" 
+              class="form-control" 
+              [ngClass]="{ 'is-invalid': submitted && f['name'].errors }"
+              placeholder="John Doe"
+            >
+            <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+              <div *ngIf="f['name'].errors['required']">Name is required</div>
+              <div *ngIf="f['name'].errors['minlength']">Name must be at least 2 characters</div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="email" class="form-label">Email Address</label>
+            <input 
+              type="email" 
+              id="email" 
+              formControlName="email" 
+              class="form-control" 
+              [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
+              placeholder="john.doe@example.com"
+            >
+            <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+              <div *ngIf="f['email'].errors['required']">Email is required</div>
+              <div *ngIf="f['email'].errors['email']">Please enter a valid email address</div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone" class="form-label">Phone Number (optional)</label>
+            <input 
+              type="tel" 
+              id="phone" 
+              formControlName="phone" 
+              class="form-control" 
+              [ngClass]="{ 'is-invalid': submitted && f['phone'].errors }"
+              placeholder="9876543210"
+            >
+            <div *ngIf="submitted && f['phone'].errors" class="invalid-feedback">
+              <div *ngIf="f['phone'].errors['pattern']">Please enter a valid 10-digit phone number</div>
+            </div>
+            <small class="form-text">Format: 10 digits without spaces or dashes</small>
+          </div>
+          
+          <div class="form-group">
+            <label for="service" class="form-label">Service of Interest</label>
+            <select 
+              id="service" 
+              formControlName="service" 
+              class="form-select" 
+              [ngClass]="{ 'is-invalid': submitted && f['service'].errors }"
+            >
+              <option value="" disabled selected>Select a service</option>
+              <option *ngFor="let service of services" [value]="service">{{ service }}</option>
+            </select>
+            <div *ngIf="submitted && f['service'].errors" class="invalid-feedback">
+              <div *ngIf="f['service'].errors['required']">Please select a service</div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="message" class="form-label">Your Message</label>
+            <textarea 
+              id="message" 
+              formControlName="message" 
+              class="form-control" 
+              [ngClass]="{ 'is-invalid': submitted && f['message'].errors }"
+              placeholder="Let me know how I can help you..."
+            ></textarea>
+            <div *ngIf="submitted && f['message'].errors" class="invalid-feedback">
+              <div *ngIf="f['message'].errors['required']">Message is required</div>
+              <div *ngIf="f['message'].errors['minlength']">Message must be at least 10 characters</div>
+            </div>
+          </div>
+          
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section> 

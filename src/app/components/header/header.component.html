@@ -1,0 +1,49 @@
+<header class="header" [ngClass]="{'scrolled': isScrolled}">
+  <div class="container header-container">
+    <a (click)="navigateTo('/home')" class="logo" style="cursor: pointer;">
+      <div class="logo-image">
+        <span class="logo-letter">A</span>
+      </div>
+      <h1>Ashis Chakraborty</h1>
+    </a>
+    
+    <button class="menu-button" (click)="toggleMenu()" [ngClass]="{'active': isMenuOpen}">
+      <span class="menu-bar"></span>
+      <span class="menu-bar"></span>
+      <span class="menu-bar"></span>
+    </button>
+    
+    <ul class="nav-menu" [ngClass]="{'open': isMenuOpen}">
+      <li class="nav-item" [ngClass]="{'fade-in': isMenuOpen}">
+        <a routerLinkActive="active" class="nav-link" (click)="navigateTo('/home')" style="cursor: pointer;">
+          <span class="nav-icon"><i class="fas fa-home"></i></span>
+          <span class="nav-text">Home</span>
+        </a>
+      </li>
+      <li class="nav-item" [ngClass]="{'fade-in': isMenuOpen}">
+        <a routerLinkActive="active" class="nav-link" (click)="navigateTo('/about')" style="cursor: pointer;">
+          <span class="nav-icon"><i class="fas fa-user"></i></span>
+          <span class="nav-text">About</span>
+        </a>
+      </li>
+      <li class="nav-item" [ngClass]="{'fade-in': isMenuOpen}">
+        <a routerLinkActive="active" class="nav-link" (click)="navigateTo('/services')" style="cursor: pointer;">
+          <span class="nav-icon"><i class="fas fa-briefcase"></i></span>
+          <span class="nav-text">Services</span>
+        </a>
+      </li>
+      <li class="nav-item" [ngClass]="{'fade-in': isMenuOpen}">
+        <a routerLinkActive="active" class="nav-link" (click)="navigateTo('/blog')" style="cursor: pointer;">
+          <span class="nav-icon"><i class="fas fa-blog"></i></span>
+          <span class="nav-text">Blog</span>
+        </a>
+      </li>
+      <li class="nav-item" [ngClass]="{'fade-in': isMenuOpen}">
+        <a routerLinkActive="active" class="nav-link" (click)="navigateTo('/contact')" style="cursor: pointer;">
+          <span class="nav-icon"><i class="fas fa-envelope"></i></span>
+          <span class="nav-text">Contact</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</header> 
